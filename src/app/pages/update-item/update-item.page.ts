@@ -22,7 +22,7 @@ export class UpdateItemPage implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(data => {
       this.item = this.itemService.getItemById(data.id)[0];
-      //if item is undefined, go back to home
+      // if item is undefined, go back to home
       if (!this.item) {
         this.goBack();
       } else {
@@ -39,7 +39,7 @@ export class UpdateItemPage implements OnInit {
   }
 
   updateItem(value) {
-    let newValues = {
+    const newValues = {
       id: this.item.id,
       title: value.title,
       description: value.description

@@ -7,10 +7,11 @@
     "ng": "ng",
     "start": "ng serve --open --watch",
     "build": "ng build",
-    "build:prod": "ng build --prod",
+    "build:prod": "rimraf dist && ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "doc": "rimraf tmp/documentation && compodoc -p src/tsconfig.app.json -d tmp/documentation -s -o"
   },
   "private": true,
   "dependencies": {
@@ -43,6 +44,7 @@
     "@types/jasminewd2": "~2.0.8",
     "@types/node": "~10.12.0",
     "codelyzer": "~5.2.0",
+    "compodoc": "0.0.41",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.4.1",
@@ -51,6 +53,7 @@
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.2",
     "protractor": "~5.4.2",
+    "rimraf": "^3.0.0",
     "ts-node": "~8.4.1",
     "tslint": "~5.20.1",
     "typescript": "~3.6.4"
